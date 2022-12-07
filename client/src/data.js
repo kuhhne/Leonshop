@@ -27,16 +27,19 @@ export const categories = [
     id: 1,
     img: "https://pardohogar.vtexassets.com/arquivos/ids/156859-800-450?v=636681936681200000&width=800&height=450&aspect=true",
     title: "Piletas de lona",
+    cat: "piletas"
   },
   {
     id: 2,
     img: "https://www.campcraft.co.za/wp-content/uploads/2021/02/Campcraft-Product-Category-1-Person-Tent.jpg",
     title: "Carpas",
+    cat: "carpas"
   },
   {
     id: 3,
     img: "https://m.bestwaycorp.cl/FileUpload/ES/WebPage/Mobile/160974b0-3087-4334-8969-30f9268b7fad/images/au_nz/HelsinkiSPA.jpg",
     title: "Varios",
+    cat: "varios"
   },
 ];
 

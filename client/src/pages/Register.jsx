@@ -8,8 +8,6 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-      center;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -66,10 +64,6 @@ const Register = () => {
           <Input placeholder="Email" />
           <Input placeholder="Contraseña" />
           <Input placeholder="Confirmar contraseña" />
-          <Agreement>
-            Al crear una cuenta, doy permiso de procesar mi informacion de acuerdo a la 
-            <b>POLITICA DE PRIVACIDAD</b>
-          </Agreement>
           <Button>Crear</Button>
         </Form>
       </Wrapper>

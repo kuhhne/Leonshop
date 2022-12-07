@@ -4,7 +4,8 @@ import Products from "../components/Products";
 import NewsLetter from "../components/NewsLetter";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
-
+import { useLocation } from "react-router-dom";
+import { useState } from 'react'
 const Container = styled.div``;
 
 const Title = styled.h1`
@@ -38,6 +39,18 @@ const Option = styled.option`
 `;
 
 const ProductList = () => {
+  const location = useLocation();
+  const cat = location.pathname.split('/')[2]
+  const [filter, setFilters] = useState({})
+  const [sort, setSort] = useState({})
+
+  const handleFilters = (e) => {
+    const value = e.target.value;
+    setFilters({
+      ...filter,
+      [e.target.name]: value,
+    })
+  }
   return (
     <Container>
       <Navbar />
@@ -45,10 +58,8 @@ const ProductList = () => {
       <FilterContainer>
         <Filter>
           <FilterText>Filtrar Productos:</FilterText>
-          <Select>
-            <Option>
-              Todos
-            </Option>
+          <Select name='cat' onChange={handleFilters}>
+            <Option>Todos</Option>
             <Option>Piletas</Option>
             <Option>Camping</Option>
             <Option>Inflables</Option>
@@ -57,9 +68,10 @@ const ProductList = () => {
           </Select>
         </Filter>
         <Filter>
-          <FilterText>Sort Products:</FilterText>
-          <Select>
-            <Option selected>Reciente</Option>
+          <FilterText>Ordenar:</FilterText>
+          <Select onChange={(e) => setSort(e.target.value)}>
+            <Option>Mas reciente</Option>
+            <Option>Mas antiguo</Option>
             <Option>Precio (asc)</Option>
             <Option>Precio (desc)</Option>
           </Select>
