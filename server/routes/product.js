@@ -8,7 +8,6 @@ const {
 
 const router = require('express').Router();
 
-
 // CREATE PRODUCT
 
 router.post('/', verifyAdminAuth, async (req, res)=> {
